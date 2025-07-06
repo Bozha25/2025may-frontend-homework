@@ -1,0 +1,90 @@
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.toggle-label {
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 40px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.icon-container {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    top: 6px;
+}
+
+.sun-icon {
+    background-image: url('../assets/theme-light.png');
+    position: absolute;
+    left: 6px;
+}
+
+.moon-icon {
+    background-image: url('../assets/theme-dark.png');
+    position: absolute;
+    right: 4px;
+}
+
+.toggle-ball {
+    width: 45px;
+    height: 45px;
+    background-color: #36687e;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.theme-toggle input:checked+.toggle-label {
+    background-color: #222;
+}
+
+.theme-toggle input:checked+.toggle-label .toggle-ball {
+    transform: translateX(50px);
+}
+
+.theme-toggle input:not(:checked)+.toggle-label .sun-icon {
+    z-index: 3;
+    opacity: 1;
+}
+
+.theme-toggle input:not(:checked)+.toggle-label .moon-icon {
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.theme-toggle input:checked+.toggle-label .moon-icon {
+    z-index: 3;
+    opacity: 1;
+}
+
+.theme-toggle input:checked+.toggle-label .sun-icon {
+    opacity: 0.4;
+    z-index: 1;
+}

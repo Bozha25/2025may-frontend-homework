@@ -1,0 +1,40 @@
+.container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 100vh;
+    flex-wrap: wrap;
+
+}
+
+.left-section,
+.right-section {
+    width: 40%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.left-section {
+    float: left;
+}
+
+.right-section {
+    float: right;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    justify-self: center;
+    border-radius: var(--radius-card);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
